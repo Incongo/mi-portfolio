@@ -1,0 +1,70 @@
+/* src/styles/FondoLogos.css */
+.fondo-logos {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    pointer-events: none;
+    z-index: 0;
+    overflow: hidden;
+    opacity: 0.35;
+    /* Un poco más sutil ahora que están mejor distribuidos */
+}
+
+.logo-flotante {
+    position: absolute;
+    opacity: 0.6;
+    filter: grayscale(40%) brightness(1.4);
+    animation: flotar infinite ease-in-out;
+    transition: all 0.3s ease;
+    will-change: transform;
+    /* Pequeño brillo para que destaquen del fondo */
+    filter: drop-shadow(0 0 3px rgba(74, 158, 255, 0.2)) grayscale(40%) brightness(1.4);
+}
+
+@keyframes flotar {
+    0% {
+        transform: translate(0, 0) rotate(0deg);
+    }
+
+    25% {
+        transform: translate(10px, -12px) rotate(5deg);
+        /* Movimientos más suaves */
+    }
+
+    50% {
+        transform: translate(15px, 0) rotate(0deg);
+    }
+
+    75% {
+        transform: translate(10px, 12px) rotate(-5deg);
+    }
+
+    100% {
+        transform: translate(0, 0) rotate(0deg);
+    }
+}
+
+/* Variaciones de movimiento */
+.logo-flotante:nth-child(odd) {
+    animation: flotar 25s infinite alternate;
+}
+
+.logo-flotante:nth-child(3n) {
+    animation: flotar 30s infinite reverse;
+}
+
+.logo-flotante:nth-child(5n+2) {
+    animation: flotar 35s infinite;
+}
+
+@media (max-width: 768px) {
+    .fondo-logos {
+        opacity: 0.2;
+    }
+
+    .logo-flotante {
+        filter: grayscale(60%) brightness(1.2);
+    }
+}
