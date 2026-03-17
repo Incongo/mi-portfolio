@@ -5,12 +5,10 @@ import '../styles/Contacto.css';
 function Contacto() {
     return (
         <section id="contacto" className="contacto">
-            <h2 className="section-title">¿Hablamos?</h2>
+            <h2 className="section-title">Contacto</h2>
             <div className="contacto-content">
                 <p className="contacto-text">
-                    Estoy buscando nuevas oportunidades para crear cosas increíbles.
-                    Si tienes un proyecto en mente o simplemente quieres conectar,
-                    ¡estaré encantado de charlar!
+                    ¿Hablamos? Cuéntame tu idea o proyecto. Estaré encantado de escucharte y ver cómo puedo ayudarte.
                 </p>
                 <div className="contacto-links">
                     <a href="mailto:incongoart@gmail.com" className="contacto-link">

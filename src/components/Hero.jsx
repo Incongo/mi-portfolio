@@ -11,13 +11,10 @@ function Hero() {
                     <span className="hero-name">[J. Pablo Pintor]</span>
                 </h1>
                 <h2 className="hero-subtitle">
-                    Técnico en Audiovisual · Desarrollador Web Full Stack Junior
+                    Técnico en Audiovisual · Desarrollador Web Full Stack asistido por IA
                 </h2>
                 <p className="hero-description">
-                    Durante 7 años he documentado cientos de cirugías y casos clínicos para
-                    distintas clínicas dentales. Ahora, desarrollo las herramientas web que el sector necesita.
-                    Combino la precisión técnica del código con el ojo experto del fotógrafo
-                    especializado para crear soluciones digitales únicas.
+                    Creador de contenido y desarrollo web asistido por IA. Soluciones digitales integrales, desde el concepto hasta la parte visual, combinando diseño estratégico con mi experiencia en audiovisual.
                 </p>
                 <div className="hero-buttons">
                     <a href="#contacto" className="btn btn-primary">Trabajemos juntos</a>

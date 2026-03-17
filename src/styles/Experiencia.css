@@ -1,3 +1,4 @@
+/* src/styles/Experiencia.css */
 .experiencia {
     padding: 4rem 0;
 }
@@ -8,6 +9,7 @@
     margin: 0 auto;
 }
 
+/* Línea central de la timeline */
 .timeline::before {
     content: '';
     position: absolute;
@@ -18,12 +20,23 @@
     background: #333;
 }
 
+/* Estilos base de cada item */
 .timeline-item {
     position: relative;
     padding-left: 50px;
     margin-bottom: 3rem;
+    opacity: 0;
+    transform: translateX(-30px);
+    transition: all 0.8s ease-out;
 }
 
+/* Cuando son visibles (se activa con JavaScript) */
+.timeline-item.visible {
+    opacity: 1;
+    transform: translateX(0);
+}
+
+/* Puntos de la timeline */
 .timeline-dot {
     position: absolute;
     left: 12px;
@@ -32,16 +45,37 @@
     border-radius: 50%;
     background: #666;
     border: 2px solid #0a0a0a;
+    transition: all 0.3s ease;
 }
 
+/* Animación suave de los puntos al hacerse visibles */
+.timeline-item.visible .timeline-dot {
+    animation: pulse 2s infinite;
+}
+
+@keyframes pulse {
+
+    0%,
+    100% {
+        box-shadow: 0 0 0 0 rgba(74, 158, 255, 0.4);
+    }
+
+    50% {
+        box-shadow: 0 0 0 10px rgba(74, 158, 255, 0);
+    }
+}
+
+/* Colores específicos para cada tipo */
 .timeline-item.educacion .timeline-dot {
-    background: #4a90e2;
+    background: #4a9eff;
+    /* Cambiado a azul para mantener coherencia */
 }
 
 .timeline-item.proyecto .timeline-dot {
     background: #50c878;
 }
 
+/* Cabecera de cada item */
 .timeline-header {
     display: flex;
     justify-content: space-between;
@@ -52,11 +86,24 @@
 .timeline-title {
     font-size: 1.2rem;
     color: #ffffff;
+    transition: color 0.3s ease;
+}
+
+.timeline-item:hover .timeline-title {
+    color: #4a9eff;
+    /* Título se vuelve azul al hacer hover */
 }
 
 .timeline-date {
     color: #888;
     font-size: 0.9rem;
+    transition: all 0.3s ease;
+}
+
+.timeline-item:hover .timeline-date {
+    color: #4a9eff;
+    /* Fecha se vuelve azul al hacer hover */
+    transform: scale(1.05);
 }
 
 .timeline-entity {
@@ -69,8 +116,27 @@
 .timeline-description {
     color: #999;
     line-height: 1.6;
+    transition: color 0.3s ease;
 }
 
+.timeline-item:hover .timeline-description {
+    color: #ccc;
+    /* Descripción se aclara al hacer hover */
+}
+
+/* Efecto de contenido al hacer hover */
+.timeline-content {
+    transition: all 0.3s ease;
+    padding: 0.5rem;
+    border-radius: 8px;
+}
+
+.timeline-item:hover .timeline-content {
+    background: linear-gradient(90deg, rgba(74, 158, 255, 0.1) 0%, transparent 100%);
+    transform: translateX(5px);
+}
+
+/* ===== VERSIÓN ESCRITORIO ===== */
 @media (min-width: 768px) {
     .timeline::before {
         left: 50%;
@@ -79,23 +145,30 @@
     .timeline-item {
         padding-left: 0;
         width: 50%;
+        transform: translateX(-30px);
     }
 
+    /* Items impares (izquierda) */
     .timeline-item:nth-child(odd) {
         margin-left: auto;
         padding-left: 50px;
     }
 
+    /* Items pares (derecha) */
     .timeline-item:nth-child(even) {
         margin-right: auto;
         padding-right: 50px;
         text-align: right;
+        transform: translateX(30px);
+        /* Vienen desde la derecha */
     }
 
+    /* Ajuste del header para items pares */
     .timeline-item:nth-child(even) .timeline-header {
         flex-direction: row-reverse;
     }
 
+    /* Posición de los puntos */
     .timeline-dot {
         left: auto;
         right: -8px;
@@ -106,5 +179,35 @@
         right: auto;
     }
 
+    /* Cuando son visibles, todos vuelven a su posición */
+    .timeline-item.visible,
+    .timeline-item:nth-child(odd).visible,
+    .timeline-item:nth-child(even).visible {
+        opacity: 1;
+        transform: translateX(0);
+    }
 
+    /* Hover effects en escritorio */
+    .timeline-item:nth-child(even):hover .timeline-content {
+        transform: translateX(-5px);
+        /* Los items pares se mueven a la izquierda al hacer hover */
+        background: linear-gradient(-90deg, rgba(74, 158, 255, 0.1) 0%, transparent 100%);
+    }
+}
+
+/* ===== VERSIÓN MÓVIL ===== */
+@media (max-width: 767px) {
+    .timeline-item {
+        transform: translateX(-20px);
+        /* Menos movimiento en móvil */
+    }
+
+    .timeline-item.visible {
+        transform: translateX(0);
+    }
+
+    .timeline-content:hover {
+        background: rgba(74, 158, 255, 0.1);
+        padding-left: 1rem;
+    }
 }

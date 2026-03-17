@@ -21,13 +21,62 @@
     font-size: 1.5rem;
     font-weight: bold;
     letter-spacing: 1px;
+    position: relative;
+    display: inline-block;
+    padding: 0 1.5rem;
+    /* Espacio para los corchetes */
     transition: all 0.3s;
 }
 
+/* Estilo base de los corchetes */
+.nav-logo a::before,
+.nav-logo a::after {
+    content: '[';
+    position: absolute;
+    font-size: 2rem;
+    color: #4a9eff;
+    /* Azul */
+    opacity: 0.5;
+    transition: all 0.4s ease;
+    top: 50%;
+    transform: translateY(-50%);
+}
+
+/* Corchete izquierdo */
+.nav-logo a::before {
+    left: 0;
+    content: '[';
+}
+
+/* Corchete derecho */
+.nav-logo a::after {
+    right: 0;
+    content: ']';
+}
+
+/* Efecto hover: los corchetes se separan */
+.nav-logo a:hover::before {
+    left: -10px;
+    /* Se mueve más a la izquierda */
+    opacity: 1;
+    color: #4a9eff;
+    transform: translateY(-50%) scale(1.2);
+}
+
+.nav-logo a:hover::after {
+    right: -10px;
+    /* Se mueve más a la derecha */
+    opacity: 1;
+    color: #4a9eff;
+    transform: translateY(-50%) scale(1.2);
+}
+
+/* Efecto adicional: el nombre también reacciona */
 .nav-logo a:hover {
     color: #4a9eff;
-    /* Azul al hacer hover */
-    text-shadow: 0 0 10px rgba(74, 158, 255, 0.5);
+    text-shadow: 0 0 10px rgba(74, 158, 255, 0.3);
+    letter-spacing: 2px;
+    /* Las letras se separan ligeramente */
 }
 
 .nav-menu {
@@ -41,11 +90,9 @@
     text-decoration: none;
     transition: all 0.3s;
     position: relative;
-    /* Para el efecto de subrayado */
     padding-bottom: 0.25rem;
 }
 
-/* Efecto de subrayado animado */
 .nav-menu a::after {
     content: '';
     position: absolute;
@@ -63,10 +110,8 @@
 
 .nav-menu a:hover::after {
     width: 100%;
-    /* Subrayado azul al hacer hover */
 }
 
-/* Estilo para el enlace activo (cuando estás en esa sección) */
 .nav-menu a.active {
     color: #4a9eff;
 }
@@ -90,18 +135,14 @@
     width: 32px;
     height: 32px;
     border-radius: 50%;
-    /* Forma circular */
     border: 1px solid transparent;
 }
 
 .nav-social a:hover {
     color: #4a9eff;
-    /* Iconos azules al hacer hover */
     border-color: #4a9eff;
-    /* Borde circular azul */
     transform: translateY(-2px);
     background-color: rgba(74, 158, 255, 0.1);
-    /* Fondo azul muy sutil */
 }
 
 @media (max-width: 768px) {
@@ -111,5 +152,181 @@
 
     .nav-logo a {
         font-size: 1.3rem;
+        padding: 0 1rem;
     }
+
+    .nav-logo a::before,
+    .nav-logo a::after {
+        font-size: 1.5rem;
+    }
+}
+
+.header {
+    background-color: #000000;
+    border-bottom: 1px solid #333;
+    position: sticky;
+    top: 0;
+    z-index: 100;
+}
+
+.nav {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 1rem 20px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.nav-logo a {
+    color: #ffffff;
+    text-decoration: none;
+    font-size: 1.5rem;
+    font-weight: bold;
+    letter-spacing: 1px;
+    position: relative;
+    display: inline-block;
+    padding: 0 1.5rem;
+
+    /* Animación de entrada */
+    animation: revealName 1.5s ease-out forwards;
+}
+
+/* Estado inicial: nombre invisible */
+.nav-logo a {
+    opacity: 0;
+}
+
+/* Animación principal */
+@keyframes revealName {
+    0% {
+        opacity: 0;
+    }
+
+    30% {
+        opacity: 0;
+    }
+
+    100% {
+        opacity: 1;
+    }
+}
+
+/* Corchetes con animación propia */
+.nav-logo a::before,
+.nav-logo a::after {
+    position: absolute;
+    font-size: 2rem;
+    color: #4a9eff;
+    top: 50%;
+    transform: translateY(-50%);
+    opacity: 0;
+    /* Invisibles al inicio */
+    animation: openBrackets 1.2s ease-out forwards;
+}
+
+/* Corchete izquierdo */
+.nav-logo a::before {
+    left: 0;
+    content: '[';
+    animation-delay: 0.2s;
+    /* Pequeño retraso */
+}
+
+/* Corchete derecho */
+.nav-logo a::after {
+    right: 0;
+    content: ']';
+    animation-delay: 0.2s;
+    /* Pequeño retraso */
+}
+
+/* Animación de los corchetes */
+@keyframes openBrackets {
+    0% {
+        opacity: 0;
+        left: 50%;
+        right: 50%;
+        transform: translate(-50%, -50%);
+        font-size: 3rem;
+    }
+
+    40% {
+        opacity: 0.8;
+        left: 20%;
+        right: 20%;
+        transform: translateY(-50%);
+        font-size: 2.5rem;
+    }
+
+    70% {
+        opacity: 1;
+        left: -5px;
+        right: -5px;
+    }
+
+    100% {
+        opacity: 1;
+        left: 0;
+        right: 0;
+        transform: translateY(-50%);
+        font-size: 2rem;
+    }
+}
+
+/* Ajuste específico para el corchete derecho en la animación */
+.nav-logo a::after {
+    animation-name: openBracketsRight;
+}
+
+@keyframes openBracketsRight {
+    0% {
+        opacity: 0;
+        right: 50%;
+        transform: translate(50%, -50%);
+        font-size: 3rem;
+    }
+
+    40% {
+        opacity: 0.8;
+        right: 20%;
+        transform: translateY(-50%);
+        font-size: 2.5rem;
+    }
+
+    70% {
+        opacity: 1;
+        right: -5px;
+    }
+
+    100% {
+        opacity: 1;
+        right: 0;
+        transform: translateY(-50%);
+        font-size: 2rem;
+    }
+}
+
+/* Efecto hover posterior (después de la animación) */
+.nav-logo a:hover::before {
+    left: -10px;
+    opacity: 1;
+    color: #4a9eff;
+    transform: translateY(-50%) scale(1.2);
+    transition: all 0.4s ease;
+}
+
+.nav-logo a:hover::after {
+    right: -10px;
+    opacity: 1;
+    color: #4a9eff;
+    transform: translateY(-50%) scale(1.2);
+    transition: all 0.4s ease;
+}
+
+.nav-logo a:hover {
+    color: #4a9eff;
+    text-shadow: 0 0 10px rgba(74, 158, 255, 0.3);
+    letter-spacing: 2px;
+    transition: all 0.4s ease;
 }
