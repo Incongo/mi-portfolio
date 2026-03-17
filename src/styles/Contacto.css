@@ -41,10 +41,42 @@
 
 .contacto-link:hover {
     background-color: #1a1a1a;
-    border-color: #666;
+    border-color: #4a9eff;
     transform: translateX(10px);
+}
+
+.contacto-link:hover svg {
+    color: #4a9eff;
 }
 
 .contacto-link span {
     font-size: 1.1rem;
+}
+
+.contacto-email-badge {
+    background: #1a1a1a;
+    color: #4a9eff;
+    padding: 0.3rem 0.8rem;
+    border-radius: 20px;
+    font-size: 0.9rem;
+    border: 1px solid #333;
+    display: inline-block;
+    margin-top: 2rem;
+}
+
+.contacto-button {
+    background: #111;
+    border: 1px solid #333;
+    border-radius: 8px;
+    padding: 1rem 2rem;
+    color: #fff;
+    font-size: 1.1rem;
+    transition: all 0.3s;
+    display: inline-block;
+    text-decoration: none;
+}
+
+.contacto-button:hover {
+    border-color: #4a9eff;
+    transform: translateY(-5px);
 }

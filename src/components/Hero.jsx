@@ -11,7 +11,7 @@ function Hero() {
                     <span className="hero-name">[J. Pablo Pintor]</span>
                 </h1>
                 <h2 className="hero-subtitle">
-                    Especialista en Fotografía Dental · Desarrollador Web Full Stack
+                    Técnico en Audiovisual · Desarrollador Web Full Stack Junior
                 </h2>
                 <p className="hero-description">
                     Durante 7 años he documentado cientos de cirugías y casos clínicos para

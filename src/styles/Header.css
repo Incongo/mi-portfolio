@@ -21,6 +21,13 @@
     font-size: 1.5rem;
     font-weight: bold;
     letter-spacing: 1px;
+    transition: all 0.3s;
+}
+
+.nav-logo a:hover {
+    color: #4a9eff;
+    /* Azul al hacer hover */
+    text-shadow: 0 0 10px rgba(74, 158, 255, 0.5);
 }
 
 .nav-menu {
@@ -32,11 +39,41 @@
 .nav-menu a {
     color: #e0e0e0;
     text-decoration: none;
-    transition: color 0.3s;
+    transition: all 0.3s;
+    position: relative;
+    /* Para el efecto de subrayado */
+    padding-bottom: 0.25rem;
+}
+
+/* Efecto de subrayado animado */
+.nav-menu a::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 0;
+    height: 2px;
+    background-color: #4a9eff;
+    transition: width 0.3s ease;
 }
 
 .nav-menu a:hover {
     color: #ffffff;
+}
+
+.nav-menu a:hover::after {
+    width: 100%;
+    /* Subrayado azul al hacer hover */
+}
+
+/* Estilo para el enlace activo (cuando estás en esa sección) */
+.nav-menu a.active {
+    color: #4a9eff;
+}
+
+.nav-menu a.active::after {
+    width: 100%;
+    background-color: #4a9eff;
 }
 
 .nav-social {
@@ -46,15 +83,33 @@
 
 .nav-social a {
     color: #e0e0e0;
-    transition: color 0.3s;
+    transition: all 0.3s;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 32px;
+    height: 32px;
+    border-radius: 50%;
+    /* Forma circular */
+    border: 1px solid transparent;
 }
 
 .nav-social a:hover {
-    color: #ffffff;
+    color: #4a9eff;
+    /* Iconos azules al hacer hover */
+    border-color: #4a9eff;
+    /* Borde circular azul */
+    transform: translateY(-2px);
+    background-color: rgba(74, 158, 255, 0.1);
+    /* Fondo azul muy sutil */
 }
 
 @media (max-width: 768px) {
     .nav-menu {
         display: none;
+    }
+
+    .nav-logo a {
+        font-size: 1.3rem;
     }
 }
