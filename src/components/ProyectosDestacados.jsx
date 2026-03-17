@@ -7,43 +7,102 @@ function ProyectosDestacados() {
     const proyectos = [
         {
             id: 1,
-            nombre: 'photostock',
-            descripcion: 'Gestor de archivos fotográficos. Organización de imágenes clínicas.',
-            tecnologias: ['PHP'],
+            nombre: 'PhotoStock - Gestor de Fotografías',
+            descripcion: 'Gestor minimalista de fotografías construido con CakePHP. Permite la subida de archivos, organización por carpetas y etiquetado múltiple. Diseñado pensando en fotógrafos que necesitan clasificar grandes volúmenes de imágenes clínicas o artísticas.',
+            tecnologias: ['CakePHP', 'TailwindCSS', 'JavaScript'],
             github: 'https://github.com/Incongo/photostock',
-            demo: null
+            demo: null,
+            caracteristicas: [
+                'Subida de imágenes con renombrado único y validación básica',
+                'Sistema de etiquetado múltiple (many-to-many) para clasificación',
+                'CRUD completo para fotos y etiquetas',
+                'Arquitectura MVC limpia con CakePHP',
+                'Interfaz minimalista con TailwindCSS',
+                'Migraciones de base de datos para despliegue reproducible'
+            ]
         },
         {
-            id: 2,
-            nombre: 'formacomempleo-laravel',
-            descripcion: 'Plataforma de empleopara empresas y candidatos con Laravel.',
-            tecnologias: ['Laravel', 'Blade', 'PHP'],
+            id: 2, // Ajusta según el orden final
+            nombre: 'FormacomEmpleo - Portal de Empleo',
+            descripcion: 'Plataforma completa de empleo desarrollada con Laravel que conecta empresas y candidatos. Gestiona ofertas, postulaciones, perfiles con roles diferenciados y subida de archivos. Ideal para entender flujos de trabajo complejos con autenticación y autorización.',
+            tecnologias: ['Laravel', 'PHP', 'Blade'],
             github: 'https://github.com/Incongo/formacomempleo-laravel',
-            demo: null
+            demo: null,
+            caracteristicas: [
+                'Tres roles de usuario: Administrador, Empresa y Candidato, cada uno con su propio dashboard y permisos',
+                'Registro diferenciado para empresas y candidatos',
+                'Gestión completa de ofertas (CRUD) para empresas',
+                'Sistema de postulaciones con mensajes y gestión de estados (pendiente/aceptada/rechazada)',
+                'Filtros avanzados por estado, fecha y palabras clave',
+                'Subida de fotos y CVs con almacenamiento público',
+                'Middleware personalizado para control de acceso por roles'
+            ]
         },
         {
             id: 3,
-            nombre: 'pokeapilocal',
-            descripcion: 'Cliente web que consume la API de Pokémon.',
-            tecnologias: ['JavaScript', 'API REST'],
-            github: 'https://github.com/Incongo/pokeapilocal',
-            demo: null
+            nombre: 'front-padel - Plataforma de Reservas Deportivas',
+            descripcion: 'Aplicación full stack para la gestión de pistas, horarios y reservas de pádel. Incluye autenticación JWT, roles de usuario y administrador, panel de control completo y un frontend moderno con React.',
+            tecnologias: ['React', 'Python', 'Flask'],
+            github: 'https://github.com/Incongo/front-padel',
+            demo: 'https://incongo.github.io/front-padel/',
+            caracteristicas: [
+                'Frontend con React 19 y Vite para un desarrollo rápido y moderno',
+                'Backend en Python con Flask, SQLAlchemy y autenticación JWT',
+                'Sistema de roles: usuarios y administradores con diferentes permisos',
+                'Panel de administración completo con CRUD de usuarios, pistas y horarios',
+                'Filtrado de disponibilidad por fecha y franja horaria',
+                'Selección de slots consecutivos para reservas flexibles',
+                'Historial de reservas para cada usuario',
+                'Despliegue del frontend en GitHub Pages (demo funcional)'
+            ]
         },
         {
             id: 4,
-            nombre: 'front-padel',
-            descripcion: 'Aplicación frontend para gestión de pistas de pádel.',
-            tecnologias: ['JavaScript'],
-            github: 'https://github.com/Incongo/front-padel',
-            demo: null
+            nombre: 'Pokedex Interactiva',
+            descripcion: 'Pokédex web interactiva que consume la PokeAPI para mostrar información detallada de los Pokémon. Incluye tarjetas con efectos visuales, gráficos de estadísticas con Chart.js y una interfaz moderna y responsive.',
+            tecnologias: ['JavaScript', 'HTML5', 'CSS'],
+            github: 'https://github.com/Incongo/pokedex',
+            demo: null,
+            caracteristicas: [
+                'Consumo completo de la PokeAPI para obtener datos en tiempo real',
+                'Tarjetas interactivas con efectos "carta" y reflejos dinámicos (CSS avanzado)',
+                'Gráficos de radar con Chart.js para visualizar estadísticas base',
+                'Vistas diferenciadas: listado general y detalle individual',
+                'Arquitectura modular con archivos JS separados por funcionalidad',
+                'Diseño responsive y componentes reutilizables (header/footer)'
+            ]
         },
         {
             id: 5,
-            nombre: 'Hundiendo la flota en Java',
-            descripcion: 'Aplicación en Java para creacion de partidas online de hundir la flota.',
-            tecnologias: ['Java'],
+            nombre: 'Battleship Online  - Java',
+            descripcion: 'Aplicación web multijugador del clásico Hundir la Flota. Permite registro de usuarios, creación de partidas públicas/privadas y juego en tiempo real con validación completa de reglas y turnos.',
+            tecnologias: ['Java', 'Spring', 'Thymeleaf', 'WebSockets'],
             github: 'https://github.com/Incongo/HundiendoenJava',
-            demo: null
+            demo: null,
+            caracteristicas: [
+                'Tablero 10x10 con 5 tipos de barcos',
+                'Sistema de turnos y detección automática de fin de partida',
+                'Registro/login de usuarios y estadísticas',
+                'Salas de espera en tiempo real',
+                'Arquitectura MVC con Spring Boot'
+            ]
+        },
+        {
+            id: 6,
+            nombre: 'Incongogram - Red Social de Fotografías',
+            descripcion: 'Red social centrada en la publicación y compartición de fotografías, desarrollada íntegramente en PHP nativo. Los usuarios pueden registrarse, subir imágenes, votar (con AJAX), comentar y gestionar su perfil personal.',
+            tecnologias: ['PHP', 'JavaScript (AJAX)', 'CSS'],
+            github: 'https://github.com/Incongo/formacombook',
+            demo: null,
+            caracteristicas: [
+                'Sistema completo de autenticación: registro, login y edición de perfil',
+                'Subida de imágenes con almacenamiento en servidor',
+                'Sistema de votos (me gusta) implementado con AJAX para actualización asíncrona',
+                'Comentarios y respuestas anidadas en cada fotografía',
+                'CRUD completo para que los usuarios gestionen sus propias fotos (editar/eliminar)',
+                'Arquitectura organizada con includes reutilizables y separación de lógica',
+                'Base de datos MySQL con estructura relacional para usuarios, fotos, votos y comentarios'
+            ]
         }
     ];
 
