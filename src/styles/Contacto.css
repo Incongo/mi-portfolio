@@ -1,0 +1,50 @@
+.contacto {
+    padding: 4rem 0;
+    min-height: 60vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.contacto-content {
+    max-width: 600px;
+    margin: 0 auto;
+    text-align: center;
+}
+
+.contacto-text {
+    font-size: 1.2rem;
+    color: #aaa;
+    margin-bottom: 3rem;
+    line-height: 1.8;
+}
+
+.contacto-links {
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+}
+
+.contacto-link {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 1rem;
+    padding: 1rem;
+    background-color: #111;
+    border: 1px solid #333;
+    border-radius: 8px;
+    color: #e0e0e0;
+    text-decoration: none;
+    transition: all 0.3s;
+}
+
+.contacto-link:hover {
+    background-color: #1a1a1a;
+    border-color: #666;
+    transform: translateX(10px);
+}
+
+.contacto-link span {
+    font-size: 1.1rem;
+}
