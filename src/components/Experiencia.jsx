@@ -2,69 +2,49 @@ import React from 'react';
 import '../styles/Experiencia.css';
 
 function Experiencia() {
-    // Datos quemados por ahora (luego los moveremos a un archivo aparte)
     const experiencia = [
+        // CAPÍTULO 1: LA BASE AUDIOVISUAL
         {
             id: 1,
             tipo: 'educacion',
-            titulo: 'Desarrollo de Aplicaciones con Tecnologías Web',
-            entidad: '[Nombre del Curso/Institución]',
-            fecha: '2024',
-            descripcion: 'Formación intensiva en desarrollo full stack con React, PHP y tecnologías web modernas.'
+            titulo: 'Técnico superior en Audiovisuales',
+            entidad: 'IES Audiovisual de Vigo',
+            fecha: '2014 - 2018',
+            descripcion: 'Ciclo medio en Video Disk Jockey y Sonido // Ciclo Superior en Iluminación, Captación y Tratamiendo de la Imagen'
         },
         {
             id: 2,
+            tipo: 'proyecto',
+            titulo: 'Marca personal como fotógrafo profesional "Incongo Art"',
+            entidad: 'Freelance',
+            fecha: '2014 - Actualidad',
+            descripcion: 'Experiencia en la creación de contenido audiovisual en múltiples sectores.'
+        },
+        {
+            id: 3,
+            tipo: 'proyecto',
+            titulo: 'Especialización en Fotografía Dental',
+            entidad: 'Formación continua con referentes del sector',
+            fecha: '2018 - Actualidad',
+            descripcion: 'Especialización en fotografía quirúrgica, implantología y periodoncia. Dominio de técnicas de captura intraoral y extraoral, protocolos de documentación clínica y emisión en directo de cirugías.'
+        },
+
+        // CAPÍTULO 2: EL SALTO AL DESARROLLO
+        {
+            id: 3,
             tipo: 'educacion',
-            titulo: 'Estudios en Audiovisual',
-            entidad: '[Nombre de la Institución]',
-            fecha: '2022-2024',
-            descripcion: 'Formación en narrativa visual, edición, producción y dirección audiovisual.'
+            titulo: 'Desarrollo de Aplicaciones con Tecnologías Web',
+            entidad: 'Formación intensiva Full Stack',
+            fecha: '2025 - 2026',
+            descripcion: 'Formación en desarrollo de aplicaciones web con enfoque full stack. He adquirido conocimientos en tecnologías de frontend como HTML, CSS, JavaScript y React, así como en desarrollo backend con PHP, Laravel, Node.js, Python (Flask), Java (Spring) y CakePHP. Además, he trabajado con bases de datos mediante SQL, consumo e integración de APIs, y conceptos de arquitecturas web modernas. También he aprendido a utilizar herramientas de contenedorización como Docker y a realizar despliegue de aplicaciones.'
         },
-        {
-            id: 3,
-            tipo: 'proyecto',
-            titulo: 'Proyecto Destacado 1',
-            entidad: 'GitHub',
-            fecha: '2024',
-            descripcion: 'Breve descripción del proyecto y tecnologías utilizadas.'
-        },
-        {
-            id: 3,
-            tipo: 'proyecto',
-            titulo: 'photostock - Gestor de Archivos Fotográficos',
-            entidad: 'PHP · Subida de archivos',
-            fecha: '2024',
-            descripcion: 'Aplicación para organizar imágenes en carpetas. Une mi formación audiovisual con el desarrollo backend en PHP.'
-        },
-        {
-            id: 4,
-            tipo: 'proyecto',
-            titulo: 'formacomempleo-laravel',
-            entidad: 'Laravel · Blade',
-            fecha: '2024',
-            descripcion: 'Plataforma de empleo y formación construida con Laravel, demostrando el uso de frameworks PHP modernos y MVC.'
-        },
-        {
-            id: 5,
-            tipo: 'proyecto',
-            titulo: 'pokeapilocal',
-            entidad: 'JavaScript · API REST',
-            fecha: '2024',
-            descripcion: 'Cliente web que consume la API de Pokémon. Muestra mi capacidad para trabajar con APIs externas y manejar datos asíncronos.'
-        },
-        {
-            id: 6,
-            tipo: 'proyecto',
-            titulo: 'gestor-imagenes',
-            entidad: 'PHP',
-            fecha: '2026',
-            descripcion: 'Herramienta reciente para la gestión de imágenes, reforzando mi perfil en desarrollo de utilidades audiovisuales.'
-        }
+
+        // CAPÍTULO 3: PROYECTOS QUE UNEN AMBOS MUNDOS
     ];
 
     return (
         <section id="experiencia" className="experiencia">
-            <h2 className="section-title">Trayectoria</h2>
+            <h2 className="section-title">Mi Trayectoria</h2>
             <div className="timeline">
                 {experiencia.map((item) => (
                     <div key={item.id} className={`timeline-item ${item.tipo}`}>

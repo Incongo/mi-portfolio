@@ -8,14 +8,16 @@ function Hero() {
             <div className="hero-content">
                 <h1 className="hero-title">
                     <span className="hero-greeting">Hola, soy</span>
-                    <span className="hero-name">[J Pablo Pintor]</span>
+                    <span className="hero-name">[J. Pablo Pintor]</span>
                 </h1>
                 <h2 className="hero-subtitle">
-                    Desarrollador Full Stack + Creativo Audiovisual
+                    Especialista en Fotografía Dental · Desarrollador Web Full Stack
                 </h2>
                 <p className="hero-description">
-                    Combino la precisión técnica del código con la sensibilidad artística
-                    del mundo audiovisual. Creo experiencias digitales que cuentan historias.
+                    Durante 7 años he documentado cientos de cirugías y casos clínicos para
+                    distintas clínicas dentales. Ahora, desarrollo las herramientas web que el sector necesita.
+                    Combino la precisión técnica del código con el ojo experto del fotógrafo
+                    especializado para crear soluciones digitales únicas.
                 </p>
                 <div className="hero-buttons">
                     <a href="#contacto" className="btn btn-primary">Trabajemos juntos</a>
