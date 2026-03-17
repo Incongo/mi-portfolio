@@ -1,5 +1,5 @@
 import React from 'react';
-import { Github, Linkedin, Mail } from 'lucide-react';
+import { Github, Linkedin, Mail, Instagram } from 'lucide-react';
 import '../styles/Header.css';
 
 function Header() {
@@ -12,6 +12,7 @@ function Header() {
                 <ul className="nav-menu">
                     <li><a href="#hero">Inicio</a></li>
                     <li><a href="#experiencia">Experiencia</a></li>
+                    <li><a href="#proyectos">Proyectos</a></li>
                     <li><a href="#contacto">Contacto</a></li>
                 </ul>
                 <div className="nav-social">
@@ -20,6 +21,9 @@ function Header() {
                     </a>
                     <a href="https://linkedin.com/in/jpablopintor" target="_blank" rel="noopener noreferrer">
                         <Linkedin size={20} />
+                    </a>
+                    <a href="https://www.instagram.com/incongo_art" target="_blank" rel="noopener noreferrer">
+                        <Instagram size={20} />
                     </a>
                     <a href="mailto:incongoart@gmail.com">
                         <Mail size={20} />

@@ -1,5 +1,5 @@
 import React from 'react';
-import { Mail, Github, Linkedin } from 'lucide-react';
+import { Mail, Github, Linkedin, Instagram } from 'lucide-react';
 import '../styles/Contacto.css';
 
 function Contacto() {
@@ -24,6 +24,10 @@ function Contacto() {
                     <a href="https://linkedin.com/in/jpablopintor" target="_blank" rel="noopener noreferrer" className="contacto-link">
                         <Linkedin size={24} />
                         <span>linkedin.com/in/jpablopintor</span>
+                    </a>
+                    <a href="https://www.instagram.com/incongo_art" target="_blank" rel="noopener noreferrer" className="contacto-link">
+                        <Instagram size={24} />
+                        <span>@incongo_art</span>
                     </a>
                 </div>
             </div>
