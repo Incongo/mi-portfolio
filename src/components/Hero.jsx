@@ -7,7 +7,7 @@ function Hero() {
         <section id="hero" className="hero">
             <div className="hero-content">
                 <h1 className="hero-title">
-                    <span className="hero-greeting">Hola, soy</span>
+                    <span className="hero-greeting">Hola mundo, soy</span>
                     <span className="hero-name">[J. Pablo Pintor]</span>
                 </h1>
                 <h2 className="hero-subtitle">
