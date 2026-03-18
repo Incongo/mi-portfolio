@@ -7,8 +7,8 @@ function Hero() {
         <section id="hero" className="hero">
             <div className="hero-content">
                 <h1 className="hero-title">
-                    <span className="hero-greeting">Hola mundo, soy</span>
-                    <span className="hero-name">[J. Pablo Pintor]</span>
+                    <span className="hero-greeting">¡Hola mundo!</span>
+                    <span className="hero-name">{`{ J. Pablo Pintor }`}</span>
                 </h1>
                 <h2 className="hero-subtitle">
                     Técnico en Audiovisual · Desarrollador Web Full Stack asistido por IA

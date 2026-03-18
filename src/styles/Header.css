@@ -26,12 +26,15 @@
     padding: 0 1.5rem;
     /* Espacio para los corchetes */
     transition: all 0.3s;
+    white-space: nowrap;        
+    overflow: hidden;           
+    text-overflow: ellipsis; 
 }
 
 /* Estilo base de los corchetes */
 .nav-logo a::before,
 .nav-logo a::after {
-    content: '[';
+    content: '{';
     position: absolute;
     font-size: 2rem;
     color: #4a9eff;
@@ -45,13 +48,13 @@
 /* Corchete izquierdo */
 .nav-logo a::before {
     left: 0;
-    content: '[';
+    content: '{';
 }
 
 /* Corchete derecho */
 .nav-logo a::after {
     right: 0;
-    content: ']';
+    content: '}';
 }
 
 /* Efecto hover: los corchetes se separan */

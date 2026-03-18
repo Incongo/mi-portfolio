@@ -15,6 +15,14 @@ import padel2 from '../assets/proyectos/padel2.png';
 import padel3 from '../assets/proyectos/padel3.png';
 import ins1 from '../assets/proyectos/ins1.png';
 import ins2 from '../assets/proyectos/ins2.png';
+import photo1 from '../assets/proyectos/photo1.png';
+import photo2 from '../assets/proyectos/photo2.png';
+import photo3 from '../assets/proyectos/photo3.png';
+import dent1 from '../assets/proyectos/dent1.png';
+import dent2 from '../assets/proyectos/dent2.png';
+import dent3 from '../assets/proyectos/dent3.png';
+import proy from '../assets/proyectos/proy.png';
+
 function ProyectosDestacados() {
     const [modalAbierto, setModalAbierto] = useState(false);
     const [imagenModal, setImagenModal] = useState('');
@@ -34,7 +42,7 @@ function ProyectosDestacados() {
             tecnologias: ['CakePHP', 'TailwindCSS', 'JavaScript'],
             github: 'https://github.com/Incongo/photostock',
             demo: null,
-            imagenes: null,
+            imagenes: [photo2, photo3, photo1],
         },
         {
             id: 2,
@@ -56,7 +64,7 @@ function ProyectosDestacados() {
         },
         {
             id: 4,
-            nombre: 'Pokedex Interactiva',
+            nombre: 'Pokedex Interactiva - Api',
             descripcion: 'Pokédex web interactiva que consume la PokeAPI para mostrar información detallada de los Pokémon. Incluye tarjetas con efectos visuales, gráficos de estadísticas con Chart.js y una interfaz moderna y responsive.',
             tecnologias: ['JavaScript', 'HTML5', 'CSS'],
             github: 'https://github.com/Incongo/pokedex',
@@ -75,12 +83,30 @@ function ProyectosDestacados() {
         },
         {
             id: 6,
-            nombre: 'Incongogram - Red Social de Fotografías',
+            nombre: 'Incongogram - Red Social',
             descripcion: 'Red social centrada en la publicación y compartición de fotografías, desarrollada íntegramente en PHP nativo. Los usuarios pueden registrarse, subir imágenes, votar (con AJAX), comentar y gestionar su perfil personal.',
             tecnologias: ['PHP', 'JavaScript (AJAX)', 'CSS'],
             github: 'https://github.com/Incongo/formacombook',
             demo: null,
             imagenes: [ins1, ins2],
+        },
+        {
+            id: 7, // O el número siguiente que corresponda
+            nombre: 'JPP Fotografía Dental - Web Profesional',
+            descripcion: 'Sitio web profesional para servicios de fotografía odontológica, construido con WordPress. Muestra servicios especializados (creación de contenido, marketing para RRSS, emisión en directo, formación), testimonios reales de clientes y la importancia de la imagen en el sector dental.',
+            tecnologias: ['WordPress'],
+            github: null, 
+            demo: 'https://fotografiadentaljpp.com',
+            imagenes: [dent1, dent2, dent3],
+        },
+        {
+            id: 8,
+            nombre: 'Luchemos por tu proyecto',
+            descripcion: 'No dudes en contactarme y comentarme tus ideas, estaré encantado de ayudarte a llevarlo a cabo.',
+            tecnologias: [],
+            github: null,
+            demo: null,
+            imagenes: [proy],
         }
     ];
 
