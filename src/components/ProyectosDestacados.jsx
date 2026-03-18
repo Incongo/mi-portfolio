@@ -1,9 +1,31 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState } from 'react';
 import { Github, ExternalLink } from 'lucide-react';
 import '../styles/ProyectosDestacados.css';
-
+import form1 from '../assets/proyectos/form1.png';
+import form2 from '../assets/proyectos/form2.png';
+import form3 from '../assets/proyectos/form3.png';
+import poke1 from '../assets/proyectos/poke1.png';
+import poke2 from '../assets/proyectos/poke2.png';
+import poke3 from '../assets/proyectos/poke3.png';
+import hund1 from '../assets/proyectos/hund1.png';
+import hund2 from '../assets/proyectos/hund2.png';
+import hund3 from '../assets/proyectos/hund3.png';
+import padel1 from '../assets/proyectos/padel1.png';
+import padel2 from '../assets/proyectos/padel2.png';
+import padel3 from '../assets/proyectos/padel3.png';
+import ins1 from '../assets/proyectos/ins1.png';
+import ins2 from '../assets/proyectos/ins2.png';
 function ProyectosDestacados() {
-    // Por ahora datos quemados (luego puedes conectarlos a GitHub API)
+    const [modalAbierto, setModalAbierto] = useState(false);
+    const [imagenModal, setImagenModal] = useState('');
+    const [tituloModal, setTituloModal] = useState('');
+
+    const abrirModal = (imgSrc, titulo) => {
+        setImagenModal(imgSrc);
+        setTituloModal(titulo);
+        setModalAbierto(true);
+    };
+
     const proyectos = [
         {
             id: 1,
@@ -12,31 +34,16 @@ function ProyectosDestacados() {
             tecnologias: ['CakePHP', 'TailwindCSS', 'JavaScript'],
             github: 'https://github.com/Incongo/photostock',
             demo: null,
-            caracteristicas: [
-                'Subida de imágenes con renombrado único y validación básica',
-                'Sistema de etiquetado múltiple (many-to-many) para clasificación',
-                'CRUD completo para fotos y etiquetas',
-                'Arquitectura MVC limpia con CakePHP',
-                'Interfaz minimalista con TailwindCSS',
-                'Migraciones de base de datos para despliegue reproducible'
-            ]
+            imagenes: null,
         },
         {
-            id: 2, // Ajusta según el orden final
+            id: 2,
             nombre: 'FormacomEmpleo - Portal de Empleo',
             descripcion: 'Plataforma completa de empleo desarrollada con Laravel que conecta empresas y candidatos. Gestiona ofertas, postulaciones, perfiles con roles diferenciados y subida de archivos. Ideal para entender flujos de trabajo complejos con autenticación y autorización.',
             tecnologias: ['Laravel', 'PHP', 'Blade'],
             github: 'https://github.com/Incongo/formacomempleo-laravel',
             demo: null,
-            caracteristicas: [
-                'Tres roles de usuario: Administrador, Empresa y Candidato, cada uno con su propio dashboard y permisos',
-                'Registro diferenciado para empresas y candidatos',
-                'Gestión completa de ofertas (CRUD) para empresas',
-                'Sistema de postulaciones con mensajes y gestión de estados (pendiente/aceptada/rechazada)',
-                'Filtros avanzados por estado, fecha y palabras clave',
-                'Subida de fotos y CVs con almacenamiento público',
-                'Middleware personalizado para control de acceso por roles'
-            ]
+            imagenes: [form1, form2, form3],
         },
         {
             id: 3,
@@ -45,16 +52,7 @@ function ProyectosDestacados() {
             tecnologias: ['React', 'Python', 'Flask'],
             github: 'https://github.com/Incongo/front-padel',
             demo: 'https://incongo.github.io/front-padel/',
-            caracteristicas: [
-                'Frontend con React 19 y Vite para un desarrollo rápido y moderno',
-                'Backend en Python con Flask, SQLAlchemy y autenticación JWT',
-                'Sistema de roles: usuarios y administradores con diferentes permisos',
-                'Panel de administración completo con CRUD de usuarios, pistas y horarios',
-                'Filtrado de disponibilidad por fecha y franja horaria',
-                'Selección de slots consecutivos para reservas flexibles',
-                'Historial de reservas para cada usuario',
-                'Despliegue del frontend en GitHub Pages (demo funcional)'
-            ]
+            imagenes: [padel1, padel2, padel3],
         },
         {
             id: 4,
@@ -63,14 +61,8 @@ function ProyectosDestacados() {
             tecnologias: ['JavaScript', 'HTML5', 'CSS'],
             github: 'https://github.com/Incongo/pokedex',
             demo: null,
-            caracteristicas: [
-                'Consumo completo de la PokeAPI para obtener datos en tiempo real',
-                'Tarjetas interactivas con efectos "carta" y reflejos dinámicos (CSS avanzado)',
-                'Gráficos de radar con Chart.js para visualizar estadísticas base',
-                'Vistas diferenciadas: listado general y detalle individual',
-                'Arquitectura modular con archivos JS separados por funcionalidad',
-                'Diseño responsive y componentes reutilizables (header/footer)'
-            ]
+            imagenes: null,
+            imagenes: [poke1, poke2, poke3],
         },
         {
             id: 5,
@@ -79,13 +71,7 @@ function ProyectosDestacados() {
             tecnologias: ['Java', 'Spring', 'Thymeleaf', 'WebSockets'],
             github: 'https://github.com/Incongo/HundiendoenJava',
             demo: null,
-            caracteristicas: [
-                'Tablero 10x10 con 5 tipos de barcos',
-                'Sistema de turnos y detección automática de fin de partida',
-                'Registro/login de usuarios y estadísticas',
-                'Salas de espera en tiempo real',
-                'Arquitectura MVC con Spring Boot'
-            ]
+            imagenes: [hund3, hund1, hund2],
         },
         {
             id: 6,
@@ -94,42 +80,82 @@ function ProyectosDestacados() {
             tecnologias: ['PHP', 'JavaScript (AJAX)', 'CSS'],
             github: 'https://github.com/Incongo/formacombook',
             demo: null,
-            caracteristicas: [
-                'Sistema completo de autenticación: registro, login y edición de perfil',
-                'Subida de imágenes con almacenamiento en servidor',
-                'Sistema de votos (me gusta) implementado con AJAX para actualización asíncrona',
-                'Comentarios y respuestas anidadas en cada fotografía',
-                'CRUD completo para que los usuarios gestionen sus propias fotos (editar/eliminar)',
-                'Arquitectura organizada con includes reutilizables y separación de lógica',
-                'Base de datos MySQL con estructura relacional para usuarios, fotos, votos y comentarios'
-            ]
+            imagenes: [ins1, ins2],
         }
     ];
 
     return (
-        <section id="proyectos" className="proyectos">
-            <h2 className="section-title">Proyectos Destacados</h2>
-            <div className="proyectos-grid">
-                {proyectos.map((proyecto) => (
-                    <div key={proyecto.id} className="proyecto-card">
-                        <div className="proyecto-header">
-                            <h3 className="proyecto-titulo">{proyecto.nombre}</h3>
-                            <div className="proyecto-links">
-                                <a href={proyecto.github} target="_blank" rel="noopener noreferrer">
-                                    <Github size={20} />
-                                </a>
+        <>
+            <section id="proyectos" className="proyectos">
+                <h2 className="section-title">Proyectos Destacados</h2>
+                <div className="proyectos-grid">
+                    {proyectos.map((proyecto) => (
+                        <div key={proyecto.id} className="proyecto-card">
+                            {/* Imagen principal si existe */}
+                            {proyecto.imagenes && proyecto.imagenes.length > 0 && (
+                                <div className="proyecto-imagen-principal">
+                                    <img
+                                        src={proyecto.imagenes[0]}
+                                        alt={proyecto.nombre}
+                                        className="proyecto-imagen"
+                                        onClick={() => abrirModal(proyecto.imagenes[0], proyecto.nombre)}
+                                        style={{ cursor: 'pointer' }}
+                                    />
+                                </div>
+                            )}
+
+                            <div className="proyecto-header">
+                                <h3 className="proyecto-titulo">{proyecto.nombre}</h3>
+                                <div className="proyecto-links">
+                                    <a href={proyecto.github} target="_blank" rel="noopener noreferrer">
+                                        <Github size={20} />
+                                    </a>
+                                    {proyecto.demo && (
+                                        <a href={proyecto.demo} target="_blank" rel="noopener noreferrer">
+                                            <ExternalLink size={20} />
+                                        </a>
+                                    )}
+                                </div>
+                            </div>
+
+                            <p className="proyecto-descripcion">{proyecto.descripcion}</p>
+
+                            {/* Miniaturas de imágenes adicionales */}
+                            {proyecto.imagenes && proyecto.imagenes.length > 1 && (
+                                <div className="proyecto-miniaturas">
+                                    {proyecto.imagenes.slice(1).map((img, index) => (
+                                        <img
+                                            key={index}
+                                            src={img}
+                                            alt={`${proyecto.nombre} - ${index + 2}`}
+                                            className="proyecto-miniatura"
+                                            onClick={() => abrirModal(img, `${proyecto.nombre} - Vista ${index + 2}`)}
+                                        />
+                                    ))}
+                                </div>
+                            )}
+
+                            <div className="proyecto-tecnologias">
+                                {proyecto.tecnologias.map(tech => (
+                                    <span key={tech} className="tech-badge">{tech}</span>
+                                ))}
                             </div>
                         </div>
-                        <p className="proyecto-descripcion">{proyecto.descripcion}</p>
-                        <div className="proyecto-tecnologias">
-                            {proyecto.tecnologias.map(tech => (
-                                <span key={tech} className="tech-badge">{tech}</span>
-                            ))}
-                        </div>
+                    ))}
+                </div>
+            </section>
+
+            {/* Modal */}
+            {modalAbierto && (
+                <div className="modal" onClick={() => setModalAbierto(false)}>
+                    <div className="modal-contenido" onClick={e => e.stopPropagation()}>
+                        <span className="modal-cerrar" onClick={() => setModalAbierto(false)}>×</span>
+                        <img src={imagenModal} alt={tituloModal} className="modal-imagen" />
+                        <p className="modal-titulo">{tituloModal}</p>
                     </div>
-                ))}
-            </div>
-        </section>
+                </div>
+            )}
+        </>
     );
 }
 
