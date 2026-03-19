@@ -19,10 +19,10 @@
 
 .hero-greeting {
     display: inline-block;
-    font-size: 1.5rem;
+    font-size: 1.2rem;
     color: #4a9eff;
     margin-bottom: 0.5rem;
-    font-family: 'VT323', 'Courier New', monospace;
+    font-family: 'Press Start 2P', 'Courier New', monospace;
     text-shadow: 0 0 6px #4a9eff;
     padding: 0.5rem;
     border-radius: 4px;
@@ -33,13 +33,13 @@
     width: 0;
     
     /* LA CLAVE: steps = número de caracteres */
-    animation: typing 4s steps(12, end) forwards,
+    animation: typing 2s steps(12, end) forwards,
                blink-cursor 0.5s step-end infinite;
 }
 
 @keyframes typing {
     from { width: 0; }
-    to { width: 190px; } /* ← ANCHO EXACTO de "¡Hola mundo!" */
+    to { width: 240px; } /* ← ANCHO EXACTO de "¡Hola mundo!" */
 }
 @keyframes blink-cursor {
     from, to { border-color: transparent; }

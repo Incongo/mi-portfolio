@@ -31,10 +31,8 @@
     text-overflow: ellipsis; 
 }
 
-/* Estilo base de los corchetes */
 .nav-logo a::before,
 .nav-logo a::after {
-    content: '{';
     position: absolute;
     font-size: 2rem;
     color: #4a9eff;
@@ -48,7 +46,7 @@
 /* Corchete izquierdo */
 .nav-logo a::before {
     left: 0;
-    content: '{';
+    content: '{';  
 }
 
 /* Corchete derecho */
@@ -231,7 +229,7 @@
 /* Corchete izquierdo */
 .nav-logo a::before {
     left: 0;
-    content: '[';
+    content: '{';
     animation-delay: 0.2s;
     /* Pequeño retraso */
 }
@@ -239,7 +237,7 @@
 /* Corchete derecho */
 .nav-logo a::after {
     right: 0;
-    content: ']';
+    content: '}';
     animation-delay: 0.2s;
     /* Pequeño retraso */
 }
