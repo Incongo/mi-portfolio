@@ -26,13 +26,10 @@
     text-shadow: 0 0 2px #4a9eff;
     padding: 0.5rem;
     border-radius: 4px;
-
     white-space: nowrap;
     overflow: hidden;
     border-right: 3px solid #4a9eff;
     width: 0;
-
-    /* LA CLAVE: steps = número de caracteres */
     animation: typing 2s steps(12, end) forwards,
         blink-cursor 0.5s step-end infinite;
 }
@@ -45,8 +42,6 @@
     to {
         width: 250px;
     }
-
-    /* ← ANCHO EXACTO de "¡Hola mundo!" */
 }
 
 @keyframes blink-cursor {
@@ -136,17 +131,44 @@
     box-shadow: 0 5px 15px rgba(74, 158, 255, 0.4);
 }
 
+/* Botón de CV */
+.hero-cv {
+    display: flex;
+    justify-content: center;
+    margin-top: 1rem;
+}
+
+.btn-cv {
+    background-color: transparent;
+    border: 1px solid #4a9eff;
+    color: #4a9eff;
+    padding: 0.6rem 1.8rem;
+}
+
+.btn-cv:hover {
+    background-color: rgba(74, 158, 255, 0.1);
+    border-color: #4a9eff;
+    color: #4a9eff;
+    transform: translateY(-2px);
+    box-shadow: 0 5px 15px rgba(74, 158, 255, 0.2);
+}
+
+/* Flecha scroll */
 .hero-scroll {
     position: absolute;
     bottom: 2rem;
     left: 50%;
     transform: translateX(-50%);
     animation: bounce 2s infinite;
+    z-index: 10;
 }
 
 .hero-scroll a {
     color: #666;
     transition: color 0.3s;
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
 
 .hero-scroll a:hover {
@@ -172,6 +194,7 @@
     }
 }
 
+/* Gradiente de fondo */
 .hero::before {
     content: '';
     position: absolute;
@@ -183,7 +206,14 @@
     pointer-events: none;
 }
 
+/* ========== RESPONSIVE ========== */
 @media (max-width: 768px) {
+    .hero {
+        min-height: 100vh;
+        padding-bottom: 5rem;
+        /* Espacio para la flecha */
+    }
+
     .hero-name {
         font-size: 2.5rem;
     }
@@ -199,38 +229,13 @@
     .hero-buttons {
         flex-direction: column;
         align-items: center;
+        gap: 0.8rem;
     }
 
     .btn {
         width: 100%;
         text-align: center;
     }
-}
-
-/* Botón de CV */
-.hero-cv {
-    display: flex;
-    justify-content: center;
-    margin-top: 1rem;
-}
-
-.btn-cv {
-    background-color: transparent;
-    border: 1px solid #4a9eff;
-    color: #4a9eff;
-    padding: 0.6rem 1.8rem;
-}
-
-.btn-cv:hover {
-    background-color: rgba(74, 158, 255, 0.1);
-    border-color: #4a9eff;
-    color: #4a9eff;
-    transform: translateY(-2px);
-    box-shadow: 0 5px 15px rgba(74, 158, 255, 0.2);
-}
-
-@media (max-width: 768px) {
-    /* ... tus estilos existentes ... */
 
     .hero-cv {
         margin-top: 1rem;
@@ -240,5 +245,9 @@
     .btn-cv {
         width: 100%;
         text-align: center;
+    }
+
+    .hero-scroll {
+        bottom: 1rem;
     }
 }
