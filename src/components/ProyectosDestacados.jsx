@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { Github, ExternalLink } from 'lucide-react';
+import { Github, ExternalLink, Mail, Instagram, Linkedin } from 'lucide-react';
 import '../styles/ProyectosDestacados.css';
 import form1 from '../assets/proyectos/form1.png';
 import form2 from '../assets/proyectos/form2.png';
@@ -69,7 +69,6 @@ function ProyectosDestacados() {
             tecnologias: ['JavaScript', 'HTML5', 'CSS'],
             github: 'https://github.com/Incongo/pokedex',
             demo: null,
-            imagenes: null,
             imagenes: [poke1, poke2, poke3],
         },
         {
@@ -95,7 +94,7 @@ function ProyectosDestacados() {
             nombre: 'JPP Fotografía Dental - Web Profesional',
             descripcion: 'Sitio web profesional para servicios de fotografía odontológica, construido con WordPress. Muestra servicios especializados (creación de contenido, marketing para RRSS, emisión en directo, formación), testimonios reales de clientes y la importancia de la imagen en el sector dental.',
             tecnologias: ['WordPress'],
-            github: null, 
+            github: null,
             demo: 'https://fotografiadentaljpp.com',
             imagenes: [dent1, dent2, dent3],
         },
@@ -107,6 +106,9 @@ function ProyectosDestacados() {
             github: null,
             demo: null,
             imagenes: [proy],
+            esContacto: true,
+            contactoEmail: 'mailto:incongoart@gmail.com',
+            contactoLinkedin: 'https://linkedin.com/in/jpablopintor',
         }
     ];
 
@@ -160,7 +162,26 @@ function ProyectosDestacados() {
                                     ))}
                                 </div>
                             )}
-
+                            {proyecto.esContacto && (
+                                <div className="proyecto-botones-contacto">
+                                    <a
+                                        href="mailto:incongoart@gmail.com?subject=Contacto desde mi portfolio&body=Hola Pablo,%0A%0AHe visto tu portfolio y me interesaría contactar contigo.%0A%0AUn saludo."
+                                        className="btn-contacto"
+                                    >
+                                        <Mail size={18} />
+                                        <span>Escríbeme</span>
+                                    </a>
+                                    <a
+                                        href="https://www.linkedin.com/in/jpablopintor"
+                                        target="_blank"
+                                        rel="noopener noreferrer"
+                                        className="btn-contacto"
+                                    >
+                                        <Linkedin size={18} />
+                                        <span>LinkedIn</span>
+                                    </a>
+                                </div>
+                            )}
                             <div className="proyecto-tecnologias">
                                 {proyecto.tecnologias.map(tech => (
                                     <span key={tech} className="tech-badge">{tech}</span>

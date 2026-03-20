@@ -3,10 +3,10 @@ import '../styles/FondoLogos.css';
 
 function FondoLogos() {
     const [logos, setLogos] = useState([]);
-    const [mostrarLogos, setMostrarLogos] = useState(false); // ← Control de visibilidad
+    const [mostrarLogos, setMostrarLogos] = useState(false);
 
     useEffect(() => {
-        // Generar logos (inmediato, pero invisibles)
+        // Lista de logos 
         const logosList = [
             { src: 'https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/php/php-original.svg', alt: 'PHP', size: 45, speed: 18 },
             { src: 'https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/cakephp/cakephp-plain.svg', alt: 'CakePHP', size: 50, speed: 22 },
@@ -20,9 +20,12 @@ function FondoLogos() {
             { src: 'https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/nodejs/nodejs-original.svg', alt: 'Node.js', size: 50, speed: 19 },
             { src: 'https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/docker/docker-original-wordmark.svg', alt: 'Docker', size: 55, speed: 24 },
             { src: 'https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/laravel/laravel-original.svg', alt: 'Laravel', size: 45, speed: 20 },
+            { src: 'https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/illustrator/illustrator-original.svg', alt: 'Illustrator', size: 50, speed: 19 },
+            { src: 'https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/premierepro/premierepro-original.svg', alt: 'Premiere Pro', size: 50, speed: 25 },
+            { src: 'https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/photoshop/photoshop-original.svg', alt: 'Photoshop', size: 50, speed: 19 },
+            { src: 'https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/react/react-original.svg', alt: 'React', size: 45, speed: 18 },
         ];
 
-        // Generar posiciones (igual que antes)
         const generarPosicionUnica = (existentes, intentos = 0) => {
             if (intentos > 100) return null;
             const nuevaPos = {
@@ -47,21 +50,21 @@ function FondoLogos() {
                     id: `${logo.alt}-${index}-${Math.random()}`,
                     ...posicion,
                     animationDelay: `${Math.random() * 12}s`,
-                    rotation: (Math.random() * 30) - 15,
-                    scale: 0.8 + Math.random() * 0.7,
+                    rotation: (Math.random() * 30) - 15, // -15° a +15°
+                    scale: 0.7 + Math.random() * 0.6, // Ajustado para mejor variedad
                 });
             }
         });
 
         setLogos(logosConPosicion);
 
-        // ESPERAR 5 SEGUNDOS antes de mostrar los logos
-        const timer = setTimeout(() => {
-            setMostrarLogos(true);
-        }, 1000);
-
-        // Limpiar el timer si el componente se desmonta
-        return () => clearTimeout(timer);
+        // 🎯 Pequeño retraso para que React termine de renderizar
+        requestAnimationFrame(() => {
+            const timer = setTimeout(() => {
+                setMostrarLogos(true);
+            }, 1000); // 1 segundo de retraso
+            return () => clearTimeout(timer);
+        });
     }, []);
 
     return (
@@ -72,6 +75,7 @@ function FondoLogos() {
                     src={logo.src}
                     alt={logo.alt}
                     className="logo-flotante"
+                    loading="lazy" // ← Añadido para mejorar rendimiento
                     style={{
                         top: logo.top,
                         left: logo.left,
