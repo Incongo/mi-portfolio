@@ -20,6 +20,11 @@ function Hero() {
                     <a href="#contacto" className="btn btn-primary">Trabajemos juntos</a>
                     <a href="#experiencia" className="btn btn-secondary">Ver trayectoria</a>
                 </div>
+                <div className="hero-cv">
+                    <a href="/cv-jpablo-pintor.pdf" download className="btn btn-cv">
+                        Descargar CV
+                    </a>
+                </div>
             </div>
             <div className="hero-scroll">
                 <a href="#experiencia">

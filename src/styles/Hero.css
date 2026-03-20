@@ -109,9 +109,9 @@
 }
 
 .btn-primary {
-    background-color: #ffffff;
-    color: #000000;
-    border: 1px solid #ffffff;
+    background-color: transparent;
+    color: #ffffff;
+    border: 1px solid #333;
 }
 
 .btn-primary:hover {
@@ -202,6 +202,42 @@
     }
 
     .btn {
+        width: 100%;
+        text-align: center;
+    }
+}
+
+/* Botón de CV */
+.hero-cv {
+    display: flex;
+    justify-content: center;
+    margin-top: 1rem;
+}
+
+.btn-cv {
+    background-color: transparent;
+    border: 1px solid #4a9eff;
+    color: #4a9eff;
+    padding: 0.6rem 1.8rem;
+}
+
+.btn-cv:hover {
+    background-color: rgba(74, 158, 255, 0.1);
+    border-color: #4a9eff;
+    color: #4a9eff;
+    transform: translateY(-2px);
+    box-shadow: 0 5px 15px rgba(74, 158, 255, 0.2);
+}
+
+@media (max-width: 768px) {
+    /* ... tus estilos existentes ... */
+
+    .hero-cv {
+        margin-top: 1rem;
+        width: 100%;
+    }
+
+    .btn-cv {
         width: 100%;
         text-align: center;
     }
