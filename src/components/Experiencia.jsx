@@ -5,32 +5,6 @@ function Experiencia() {
     const itemsRef = useRef([]);
 
     const experiencia = [
-        // CAPÍTULO 1: LA BASE AUDIOVISUAL
-        {
-            id: 1,
-            tipo: 'educacion',
-            titulo: 'Técnico superior en Audiovisuales',
-            entidad: 'IES Audiovisual de Vigo',
-            fecha: '2014 - 2018',
-            descripcion: 'Ciclo medio en Video Disk Jockey y Sonido // Ciclo Superior en Iluminación, Captación y Tratamiento de la Imagen'
-        },
-        {
-            id: 2,
-            tipo: 'proyecto',
-            titulo: 'Marca personal como fotógrafo profesional "Incongo Art"',
-            entidad: 'Freelance',
-            fecha: '2014 - Actualidad',
-            descripcion: 'Experiencia en la creación de contenido audiovisual en múltiples sectores.'
-        },
-        {
-            id: 3,
-            tipo: 'proyecto',
-            titulo: 'Especialización en Fotografía Dental',
-            entidad: 'Formación continua con referentes del sector',
-            fecha: '2018 - Actualidad',
-            descripcion: 'Especialización en fotografía quirúrgica, implantología y periodoncia. Dominio de técnicas de captura intraoral y extraoral, protocolos de documentación clínica y emisión en directo de cirugías.'
-        },
-
         // CAPÍTULO 2: EL SALTO AL DESARROLLO
         {
             id: 4, // Cambiado de 3 a 4 (estaba duplicado)
@@ -40,6 +14,32 @@ function Experiencia() {
             fecha: '2025 - 2026',
             descripcion: 'Formación en desarrollo de aplicaciones web con enfoque full stack. He adquirido conocimientos en tecnologías de frontend como HTML, CSS, JavaScript y React, así como en desarrollo backend con PHP, Laravel, Node.js, Python (Flask), Java (Spring) y CakePHP. Además, he trabajado con bases de datos mediante SQL, consumo e integración de APIs, y conceptos de arquitecturas web modernas. También he aprendido a utilizar herramientas de contenedorización como Docker y a realizar despliegue de aplicaciones.'
         },
+        {
+            id: 3,
+            tipo: 'proyecto',
+            titulo: 'Especialización en Fotografía Dental',
+            entidad: 'Formación continua con referentes del sector',
+            fecha: '2018 - Actualidad',
+            descripcion: 'Especialización en fotografía quirúrgica, implantología y periodoncia. Dominio de técnicas de captura intraoral y extraoral, protocolos de documentación clínica y emisión en directo de cirugías.'
+        },
+        // CAPÍTULO 1: LA BASE AUDIOVISUAL
+        {
+            id: 2,
+            tipo: 'proyecto',
+            titulo: 'Marca personal como fotógrafo profesional "Incongo Art"',
+            entidad: 'Freelance',
+            fecha: '2014 - Actualidad',
+            descripcion: 'Experiencia en la creación de contenido audiovisual en múltiples sectores.'
+        },
+        {
+            id: 1,
+            tipo: 'educacion',
+            titulo: 'Técnico superior en Audiovisuales',
+            entidad: 'IES Audiovisual de Vigo',
+            fecha: '2014 - 2018',
+            descripcion: 'Ciclo medio en Video Disk Jockey y Sonido // Ciclo Superior en Iluminación, Captación y Tratamiento de la Imagen'
+        },
+
 
         // CAPÍTULO 3: PROYECTOS QUE UNEN AMBOS MUNDOS (puedes añadirlos después)
     ];
