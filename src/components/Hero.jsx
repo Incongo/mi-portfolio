@@ -21,7 +21,7 @@ function Hero() {
                     <a href="#experiencia" className="btn btn-secondary">Ver trayectoria</a>
                 </div>
                 <div className="hero-cv">
-                    <a href="./public/cv-jpablo-pintor.pdf" download className="btn btn-cv">
+                    <a href="./cv-jpablo-pintor.pdf" download className="btn btn-cv">
                         Descargar CV
                     </a>
                 </div>
